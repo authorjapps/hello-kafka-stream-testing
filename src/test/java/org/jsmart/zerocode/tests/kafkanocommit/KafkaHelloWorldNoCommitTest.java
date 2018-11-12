@@ -1,4 +1,4 @@
-package org.jsmart.zerocode.tests.kafka;
+package org.jsmart.zerocode.tests.kafkanocommit;
 
 import org.jsmart.zerocode.core.domain.JsonTestCase;
 import org.jsmart.zerocode.core.domain.TargetEnv;
@@ -8,11 +8,11 @@ import org.junit.runner.RunWith;
 
 @TargetEnv("application_hosts.properties")
 @RunWith(ZeroCodeUnitRunner.class)
-public class KafkaHelloWorldTest {
+public class KafkaHelloWorldNoCommitTest {
 
     @Test
-    @JsonTestCase("tests/kafka_helloworld/kafka_produce_consume_test.json")
-    public void testKafka_helloWorld() throws Exception {
+    @JsonTestCase("tests/kafka_helloworld_no_commit/kafka_consume_no_commit_test.json")
+    public void testKafka_noCommit() throws Exception {
     }
 
 }

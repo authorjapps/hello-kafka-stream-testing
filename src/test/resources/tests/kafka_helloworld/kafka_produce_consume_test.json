@@ -1,10 +1,24 @@
 {
-    "scenarioName": "Unload - consume a message from kafka",
+    "scenarioName": "New message - Produce and consume a message from kafka",
     "steps": [
         {
-            "name": "load_kafka",
-            "url": "kafka-topic:demo",
-            "operation": "load",
+            "name": "consume_and_commit", //just waiting for the new messages after this step
+            "url": "kafka-topic:hello-demo",
+            "operation": "consume",
+            "request": {
+                "consumerLocalConfigs": {
+                    "commitSync": true
+                    //"commitAsync": true
+                }
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        },
+        {
+            "name": "produce_record",
+            "url": "kafka-topic:hello-demo",
+            "operation": "produce",
             "request": {
                 "key": "${RANDOM.NUMBER}",
                 "value": "Hello World"
@@ -14,15 +28,13 @@
             }
         },
         {
-            "name": "onload_kafka",
-            "url": "kafka-topic:demo",
-            "operation": "unload",
+            "name": "consume_record",
+            "url": "kafka-topic:hello-demo",
+            "operation": "consume",
             "request": {
             },
             "assertions": {
-                // this will 1  only when consumer does a commit i.e. commitAsync or sync,
-                // otherwise 3 or more as earler messages will still be there
-                "records.SIZE" : "$GT.0"
+                "recordCount" : 1
             }
         }
     ]

@@ -1,0 +1,59 @@
+{
+    "scenarioName": "Consume with no commit",
+    "steps": [
+        {
+            "name": "produce_record1",
+            "url": "kafka-topic:hello-demo",
+            "operation": "produce",
+            "request": {
+                "key": "${RANDOM.NUMBER}",
+                "value": "Hello World 1"
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        },
+        {
+            "name": "produce_record2",
+            "url": "kafka-topic:hello-demo",
+            "operation": "produce",
+            "request": {
+                "key": "${RANDOM.NUMBER}",
+                "value": "Hello World 1"
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        },
+        {
+            "name": "consume_record",
+            "url": "kafka-topic:hello-demo",
+            "operation": "consume",
+            "request": {
+                "consumerLocalConfigs": {
+                    "commitSync":false,
+                    "commitAsync":false,
+                    "showRecordsInResponse": true
+                }
+
+            },
+            "assertions": {
+                "recordCount" : 2
+            }
+        },
+        {
+            "name": "consume_and_commit",
+            "url": "kafka-topic:hello-demo",
+            "operation": "consume",
+            "request": {
+                "consumerLocalConfigs": {
+                    "commitSync": true
+                    //"commitAsync": true
+                }
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        }
+    ]
+}
