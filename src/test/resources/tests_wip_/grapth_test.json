@@ -1,0 +1,22 @@
+{
+   "scenarioName": "Gremlin HelloWorld query",
+   "steps": [
+      {
+         "name": "Using_Gremliquery",
+         "url": "/api/graph/tinkerpop/gremlin",
+         "operation": "POST",
+         "request": {
+            "body": "g.V().has('name', 'helloworld').values('name')"
+
+         },
+         "assertions": {
+            "status": 200,
+            "body":{
+               "name": "helloworld",
+               "age": 23,
+               "country": "uk"
+            }
+         }
+      }
+   ]
+}

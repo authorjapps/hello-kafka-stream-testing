@@ -1,4 +1,4 @@
-package org.jsmart.zerocode.tests.kafka;
+package org.jsmart.zerocode.tests.kafkafiledump;
 
 import org.jsmart.zerocode.core.domain.JsonTestCase;
 import org.jsmart.zerocode.core.domain.TargetEnv;
@@ -8,11 +8,12 @@ import org.junit.runner.RunWith;
 
 @TargetEnv("host_kafka_single.properties")
 @RunWith(ZeroCodeUnitRunner.class)
-public class KafkaHelloWorldTest {
+public class KafkaRecordsToFileDumpTest {
 
     @Test
-    @JsonTestCase("tests/kafka_helloworld/kafka_produce_consume_test.json")
-    public void testKafka_helloWorld() throws Exception {
+    @JsonTestCase("tests/file_dump/kafka_consume_record_dump_test.json")
+    public void testKafkaRawRecordDump() throws Exception {
     }
+
 
 }

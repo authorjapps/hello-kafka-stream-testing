@@ -7,7 +7,7 @@
             "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
-                    "commitSync": true
+                    //"commitSync": true
                     //"commitAsync": true
                 }
             },

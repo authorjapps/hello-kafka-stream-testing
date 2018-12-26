@@ -2,19 +2,39 @@
     "scenarioName": "WIP_kafka_produce_multi_record_test.json",
     "steps": [
         {
-            "name": "produce_record",
+            "name": "commit_after_read",
+            "url": "kafka-topic:hello-demo",
+            "operation": "consume",
+            "request": {
+                "consumerLocalConfigs": {
+                    "commitSync":true,
+                    "showRecordsInResponse": true
+                }
+
+            },
+            "assertions": {
+            }
+        },
+        {
+            "name": "produce_record1",
             "url": "kafka-topic:hello-demo",
             "operation": "produce",
-            "request": [
-                {
-                    "key": "${RANDOM.NUMBER}",
-                    "value": "Hello World 1"
-                },
-                {
-                    "key": "${RANDOM.NUMBER}",
-                    "value": "Hello World 2"
-                }
-            ],
+            "request": {
+                "key": "${RANDOM.NUMBER}",
+                "value": "Hello World 1"
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        },
+        {
+            "name": "produce_record2",
+            "url": "kafka-topic:hello-demo",
+            "operation": "produce",
+            "request": {
+                "key": "${RANDOM.NUMBER}",
+                "value": "Hello World 2"
+            },
             "assertions": {
                 "status" : "Ok"
             }
@@ -25,16 +45,12 @@
             "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
-                    "commitSync":false,
-                    "commitAsync":false,
                     "showRecordsInResponse": true
                 }
 
             },
             "assertions": {
-                // this will 1  only when consumer does a commit i.e. commitAsync or sync,
-                // otherwise 3 or more as earler messages will still be there
-                "recordCount" : "$GT.1"
+                "recordCount" : 2
             }
         }
     ]

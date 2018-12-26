@@ -5,7 +5,7 @@ import org.jsmart.zerocode.core.domain.TestPackageRoot;
 import org.jsmart.zerocode.core.runner.ZeroCodePackageRunner;
 import org.junit.runner.RunWith;
 
-@TargetEnv("application_hosts.properties")
+@TargetEnv("host_kafka_single.properties")
 @RunWith(ZeroCodePackageRunner.class)
 @TestPackageRoot("tests") //<--- Root of the package to pick all tests including sub-folders
 public class HelloWorldSuite {
