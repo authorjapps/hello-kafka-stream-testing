@@ -10,11 +10,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
-	<name>Zerocode Hello World Kafka Stream Testing</name>
+	<name>Zerocode Hello World Kafka Testing</name>
 	<description>Zerocode Hello World Kafka Stream Testing Examples</description>
 
 	<properties>
-		<zerocode-rest-bdd.version>1.2.17-SNAPSHOT</zerocode-rest-bdd.version>
+		<zerocode-rest-bdd.version>1.2.18</zerocode-rest-bdd.version>
 		<junit.version>4.12</junit.version>
 		<java.version>1.8</java.version>
 		<plugin.source.version>3.0.0</plugin.source.version>
@@ -30,7 +30,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jsmart</groupId>
-			<artifactId>zerocode-rest-bdd</artifactId>
+			<artifactId>zerocode-tdd</artifactId>
 			<version>${zerocode-rest-bdd.version}</version>
 		</dependency>
 		<dependency>
@@ -57,24 +57,10 @@
 				<version>2.19.1</version>
 				<configuration>
 					<includes>
-						<include>org.jsmart.zerocode.tests.HelloWorldSuite.class</include>
+						<include>org.jsmart.zerocode.integration.tests.kafka.KafkaSuite</include>
 					</includes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>${plugin.source.version}</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
