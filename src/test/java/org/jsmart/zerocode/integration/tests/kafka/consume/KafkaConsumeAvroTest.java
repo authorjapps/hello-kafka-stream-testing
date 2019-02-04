@@ -7,7 +7,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@Ignore("For running Avro tests please uncomment the depdendency 'kafka-avro-serializer' in the 'pom.xml' file")
+@Ignore("For running these Avro tests please uncomment the depdendency 'kafka-avro-serializer' in the 'pom.xml'." +
+        "And also uncomment the '<repository>' section")
 @TargetEnv("kafka_servers/kafka_test_server_avro.properties")
 @RunWith(ZeroCodeUnitRunner.class)
 public class KafkaConsumeAvroTest {
