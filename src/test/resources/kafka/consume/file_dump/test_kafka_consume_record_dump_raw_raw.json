@@ -2,7 +2,7 @@
    "scenarioName": "Unload - consume a message from kafka - raw dump to file",
    "steps": [
       {
-         "name": "load_kafka",
+         "name": "produce_step",
          "url": "kafka-topic:demo-c2",
          "operation": "produce",
          "request": {

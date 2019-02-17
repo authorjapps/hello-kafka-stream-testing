@@ -2,9 +2,9 @@
     "scenarioName": "Produce - 2 records and consume both",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-p6",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {
@@ -22,9 +22,9 @@
             }
         },
         {
-            "name": "onload_kafka",
+            "name": "consume_step",
             "url": "kafka-topic:demo-p6",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "showRecordsConsumed": true,
@@ -35,12 +35,12 @@
                 "records": [
                     {
                         "topic": "demo-p6",
-                        "key": "${$.load_kafka.request.records[0].key}",
+                        "key": "${$.produce_step.request.records[0].key}",
                         "value": "Hello World 1"
                     },
                     {
                         "topic": "demo-p6",
-                        "key": "${$.load_kafka.request.records[1].key}",
+                        "key": "${$.produce_step.request.records[1].key}",
                         "value": "Hello World 2"
                     }
                 ],

@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message to kafka topic - int Key",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-int-topic-2",
             "operation": "produce",
             "request": {
@@ -20,9 +20,9 @@
             }
         },
         {
-            "name": "onload_kafka",
+            "name": "consume_step",
             "url": "kafka-topic:demo-int-topic-2",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     //"recordType" : "JSON",

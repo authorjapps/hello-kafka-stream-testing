@@ -2,9 +2,9 @@
     "scenarioName": "Consume via KSQL query",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-ksql",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {

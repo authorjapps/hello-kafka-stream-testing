@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message - Wrong file name",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-file-2",
             "operation": "produce",
             "request": {

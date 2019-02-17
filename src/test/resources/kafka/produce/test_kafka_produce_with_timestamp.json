@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message with timestamp",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-5",
             "operation": "produce",
             "request": {

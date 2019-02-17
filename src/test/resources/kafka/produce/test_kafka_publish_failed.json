@@ -2,9 +2,9 @@
     "scenarioName": "Load - publish a message to kafka - valid-ip format, but no kafka",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-x",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records":[
                     {

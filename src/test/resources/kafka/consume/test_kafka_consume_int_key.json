@@ -2,9 +2,9 @@
     "scenarioName": "Unload - consume a message from kafka",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-int-topic-1",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records":[
                     {
@@ -18,9 +18,9 @@
             }
         },
         {
-            "name": "onload_kafka",
+            "name": "consume_step",
             "url": "kafka-topic:demo-int-topic-1",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
             },
             "assertions": {

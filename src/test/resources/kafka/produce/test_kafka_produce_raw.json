@@ -40,7 +40,7 @@
         {
             "name": "consume_raw",
             "url": "kafka-topic:demo-raw-topic-1",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "recordType" : "RAW",

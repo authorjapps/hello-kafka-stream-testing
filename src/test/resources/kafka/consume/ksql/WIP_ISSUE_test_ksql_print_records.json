@@ -2,7 +2,7 @@
     "scenarioName": "Print Topic Records via KSQL query",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-ksql",
             "operation": "produce",
             "request": {

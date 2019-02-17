@@ -50,7 +50,7 @@ e.g.
     "scenarioName": "Simple Produce and Consume  a record to-from a kafka topic",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-topic1",
             "operation": "produce",
             "request": {
@@ -66,7 +66,7 @@ e.g.
             }
         },
         {
-            "name": "onload_kafka",
+            "name": "consume_step",
             "url": "kafka-topic:demo-topic1",
             "operation": "consume",
             "request": {

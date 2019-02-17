@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message to kafka topic - vanilla",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-1",
             "operation": "produce",
             "request": {

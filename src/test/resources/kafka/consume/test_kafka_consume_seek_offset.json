@@ -2,9 +2,9 @@
     "scenarioName": "Unload - consume a message from kafka offset via seek",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-c3",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {
@@ -18,9 +18,9 @@
             }
         },
         {
-            "name": "load_kafka2",
+            "name": "produce_step2",
             "url": "kafka-topic:demo-c3",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {
@@ -34,9 +34,9 @@
             }
         },
         {
-            "name": "onload_kafka",
+            "name": "consume_step",
             "url": "kafka-topic:demo-c3",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "commitSync": false,
@@ -50,9 +50,9 @@
             }
         },
         {
-            "name": "onload_kafka_seek",
+            "name": "consume_step_seek",
             "url": "kafka-topic:demo-c3",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "seek": "demo-c3,0,1",

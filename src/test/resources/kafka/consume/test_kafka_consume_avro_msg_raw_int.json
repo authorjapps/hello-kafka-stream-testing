@@ -47,7 +47,7 @@
         {
             "name": "consume_avro_msg_as_raw",
             "url": "kafka-topic:demo-avro-2",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "recordType": "RAW",

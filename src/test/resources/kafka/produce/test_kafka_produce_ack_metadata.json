@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message and Ack the topic metadata",
     "steps": [
         {
-            "name": "load_kafka",
+                "name": "produce_step",
             "url": "kafka-topic:demo-2",
             "operation": "produce",
             "request": {

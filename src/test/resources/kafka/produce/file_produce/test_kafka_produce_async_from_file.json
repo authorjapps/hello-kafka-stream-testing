@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message - Async - From File",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-file-1",
             "operation": "produce",
             "request": {
@@ -22,7 +22,7 @@
         {
             "name": "consume_raw",
             "url": "kafka-topic:demo-file-1",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "recordType" : "RAW",

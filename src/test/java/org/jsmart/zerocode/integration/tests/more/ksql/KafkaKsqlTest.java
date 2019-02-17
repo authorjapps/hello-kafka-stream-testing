@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 @RunWith(ZeroCodeUnitRunner.class)
 public class KafkaKsqlTest {
 
+    @Ignore("This can be run only after adding confluent-avro maven dependencies")
     @Test
     @JsonTestCase("kafka/consume/ksql/test_ksql_query.json")
     public void testKafkaConsume_ksql() throws Exception {

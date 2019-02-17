@@ -16,9 +16,9 @@ public class KafkaConsumeAvroNegativeTest {
     public void testKafkaConsume_avroWrongValue() throws Exception {
     }
 
-    @Ignore("For running Avro tests please uncomment the depdendency 'kafka-avro-serializer' in the 'pom.xml' file")
+    @Ignore("For running Avro tests please uncomment the dependency 'kafka-avro-serializer' in the 'pom.xml' file")
     @Test
-    @JsonTestCase("kafka/consume/negative/test_load_kafka_direct_invalid_avro_msg.json")
+    @JsonTestCase("kafka/consume/negative/test_produce_step_direct_invalid_avro_msg.json")
     public void testKafkaWrongData_loadDirectTopic() throws Exception {
     }
 

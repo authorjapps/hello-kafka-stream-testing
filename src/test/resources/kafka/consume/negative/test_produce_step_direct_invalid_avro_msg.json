@@ -29,9 +29,9 @@
             }
         },
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-avro-4",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {
@@ -45,9 +45,9 @@
             }
         },
         {
-            "name": "load_kafka_schema_id",
+            "name": "produce_step_schema_id",
             "url": "kafka-topic:demo-avro-4",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {
@@ -62,9 +62,9 @@
             }
         },
         {
-            "name": "load_kafka_valid_data",
+            "name": "produce_step_valid_data",
             "url": "kafka-topic:demo-avro-4",
-            "operation": "load",
+            "operation": "produce",
             "request": {
                 "records": [
                     {
@@ -80,7 +80,7 @@
         {
             "name": "consume_avro_msg_as_raw",
             "url": "kafka-topic:demo-avro-4",
-            "operation": "unload",
+            "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
                     "recordType": "RAW",
@@ -98,7 +98,7 @@
                     },
                     {
                         "topic": "demo-avro-4",
-                        "value": "$EQ.${$.load_kafka_valid_data.request.records[0].value}"
+                        "value": "$EQ.${$.produce_step_valid_data.request.records[0].value}"
                     }
                 ]
             }

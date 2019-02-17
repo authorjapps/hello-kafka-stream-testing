@@ -2,7 +2,7 @@
     "scenarioName": "Produce a message - Async with Callback",
     "steps": [
         {
-            "name": "load_kafka",
+            "name": "produce_step",
             "url": "kafka-topic:demo-3",
             "operation": "produce",
             "request": {

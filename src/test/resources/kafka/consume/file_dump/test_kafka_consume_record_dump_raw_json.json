@@ -4,7 +4,7 @@
       {
          "name": "load_topic",
          "url": "kafka-topic:demo-raw1",
-         "operation": "load",
+         "operation": "produce",
          "request": {
             "records": [
                {
@@ -20,7 +20,7 @@
       {
          "name": "onload_to_file",
          "url": "kafka-topic:demo-raw1",
-         "operation": "unload",
+         "operation": "consume",
          "request": {
             "consumerLocalConfigs": {
                "fileDumpTo": "target/temp/demo.txt",
