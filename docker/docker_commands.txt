@@ -1,0 +1,9 @@
+docker-compose -f kafka-single-node.yml up -d
+
+docker exec -it compose_kafka_1 bash
+
+kafka-topics --zookeeper zookeeper:2181 --list
+
+kafka-console-consumer --bootstrap-server kafka:29092 --topic demo-topic-1 --from-beginning
+
+docker-compose -f kafka-single-node.yml down
