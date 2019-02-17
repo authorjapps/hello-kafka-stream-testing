@@ -1,6 +1,8 @@
 # Kafka Testing Hello World examples
 
-Most simple way to test Kafka Streaming e.g. Read/Write during HBase/Hadoop BigData store or any other Data Ingestion Pipe Lines. 
+Visit the README file of [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing and many flavours of [HelloWorld samples](https://github.com/authorjapps/zerocode/blob/master/README.md#hello-world-).
+
+Let's learn about most simple and efficient way to test Kafka Streaming e.g. Read/Write during HBase/Hadoop BigData store or any other Data Pipe Lines or Micro-Services involving REST as well as Kafka. 
 
 <details>
   <summary>Try-at-home examples and much more(click to exapnd)</summary>
@@ -9,24 +11,47 @@ Most simple way to test Kafka Streaming e.g. Read/Write during HBase/Hadoop BigD
 
 + [Kafka testing - An Intro](https://github.com/authorjapps/zerocode/wiki/Kafka-Testing-Introduction)
 
-+ [Database persistence testing](https://github.com/authorjapps/zerocode/wiki/Sample-DB-SQL-Executor)
-
-+ [OAuth2 testing](https://github.com/authorjapps/zerocode-hello-world/blob/master/src/test/java/org/jsmart/zerocode/testhelp/tests/OAuth2/OAuth2Test.java)
-
-+ [Many more HelloWorld examples](https://github.com/authorjapps/zerocode/blob/master/README.md#hello-world-), such as Spring boot app testing, Performance testing, Kotlin app testing etc.
++ [Other HelloWorld examples](https://github.com/authorjapps/zerocode/blob/master/README.md#hello-world-), such as Spring boot app testing, Performance testing, Kotlin app testing etc.
 
 </details>
 
 <br/>
 
+<br/>
+
+For running the below test, please jump to the corresponding JUnit @Test.
+
+```java
+@TargetEnv("kafka_servers/kafka_test_server.properties")
+@RunWith(ZeroCodeUnitRunner.class)
+public class KafkaProduceTest {
+
+    @Test
+    @JsonTestCase("kafka/produce/test_kafka_produce.json")
+    public void testProduce() throws Exception {
+        // No node is needed here. What?
+    }
+
+}
+```
+
+In the above code 
+
+a) 'test_kafka_produce.json' is the Test Case which contains the JSON step(s). See a sample below.
+
+b) 'kafka_test_server.properties' contains the "Broker" details and Producer/Consumer configs
+
+c) '@RunWith(ZeroCodeUnitRunner.class)' is a JUnit custom runner to run the test
+
+
 e.g.
 ```javascript
 {
-    "scenarioName": "Unload - Consume a message from kafka",
+    "scenarioName": "Simple Produce and Consume  a record to-from a kafka topic",
     "steps": [
         {
             "name": "load_kafka",
-            "url": "kafka-topic:demo-c1",
+            "url": "kafka-topic:demo-topic1",
             "operation": "produce",
             "request": {
                 "records":[
@@ -42,12 +67,18 @@ e.g.
         },
         {
             "name": "onload_kafka",
-            "url": "kafka-topic:demo-c1",
+            "url": "kafka-topic:demo-topic1",
             "operation": "consume",
             "request": {
             },
             "assertions": {
-                "size" : "$GT.0"
+                "size": 1,
+                "records": [
+                    {
+                        "key" : "$NOT.NULL",
+                        "value": "Hello World"
+                    }
+                ]
             }
         }
     ]
