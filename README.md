@@ -4,7 +4,11 @@ This repo used open-source lib [zerocode-tdd](https://github.com/authorjapps/zer
 
 > _Please make sure you bring up [Kafka in a Docker](https://github.com/authorjapps/zerocode-docker-factory/wiki/Docker-container-for-Kafka-and-Schema-Registry) prior to running the tests._
 
-Let's learn about most simple and efficient way to test Kafka testing needed during e.g. Micro-Services involving REST and Kafka, Read/Write during HBase/Hadoop BigData store or any other Data Pipe Lines.
+Let's learn the most simple and efficient way of automated testing of Kafka applications. 
+This is particulaly useful during 
++ Micro-Services involving REST and Kafka
++ Read/Write during BigData store e.g. HBase/Hadoop
++ any other Data Pipe Lines
 
 <details>
   <summary>Try-at-home examples and much more(click to exapnd)</summary>
@@ -19,7 +23,6 @@ Let's learn about most simple and efficient way to test Kafka testing needed dur
 
 <br/>
 
-<br/>
 
 For running the below test, please jump to the corresponding JUnit @Test.
 
@@ -90,9 +93,9 @@ e.g.
 
 Now you can see the-
 * Reports @ `target`
-* Logs @ `target/logs/zerocode_test_logs.log`
-* Test coverage CSV Report @ `target/zerocode_full_report_YYYY-MM-DDTHH-MM-SS.SSS.csv`
-* Test coverage Chart @ `target/zerocode_results_chart_YYYY-MM-DDTHH-MM-SS.SSS.html`
+* Logs @ `target/logs/test_logs.log`
+* Test coverage CSV Report @ `target/zerocode-junit-granular-report.csv`
+* Test coverage Chart @ `target/zerocode-junit-interactive-fuzzy-search.html`
 * More [reports](https://github.com/authorjapps/zerocode#generated-reports-and-charts)
 
 IDE References:
