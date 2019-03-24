@@ -1,0 +1,58 @@
+{
+    "scenarioName": "Consume - consume records via unique group ID",
+    "steps": [
+        {
+            "name": "produce_step",
+            "url": "kafka-topic:demo-x1",
+            "operation": "produce",
+            "request": {
+                "records":[
+                    {
+                        "key": "${RANDOM.NUMBER}",
+                        "value": "Hello World"
+                    }
+                ]
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        },
+        {
+            "name": "consume_step",
+            "url": "kafka-topic:demo-x1",
+            "operation": "consume",
+            "request": {
+            },
+            "assertions": {
+                "size" : "$GT.0"
+            }
+        },
+        {
+            "name": "produce_again",
+            "url": "kafka-topic:demo-x1",
+            "operation": "produce",
+            "request": {
+                "records":[
+                    {
+                        "key": "${RANDOM.NUMBER}",
+                        "value": "Hello World"
+                    }
+                ]
+            },
+            "assertions": {
+                "status" : "Ok"
+            }
+        },
+        {
+            "name": "consume_again",
+            "url": "kafka-topic:demo-x1",
+            "operation": "consume",
+            "request": {
+            },
+            "assertions": {
+                "size" : "$GT.1"
+            }
+        }
+
+    ]
+}
