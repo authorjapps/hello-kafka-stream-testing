@@ -24,6 +24,7 @@
             "request": {
             },
             "assertions": {
+                // This uses a brand new consumer group ID
                 "size" : "$GT.0"
             }
         },
@@ -50,6 +51,11 @@
             "request": {
             },
             "assertions": {
+                // This uses a brand new consumer group ID.
+                // Hence reads the messages from beginning
+                // So for the first run, count is 2,
+                // So for the second run, count is 3,
+                // and so on...
                 "size" : "$GT.1"
             }
         }
