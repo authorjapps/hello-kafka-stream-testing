@@ -1,8 +1,14 @@
 # Kafka Testing Hello World examples
 
-Visit the README file of [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing and many flavours of [HelloWorld samples](https://github.com/authorjapps/zerocode/blob/master/README.md#hello-world-).
+This repo used open-source lib [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing. Many flavours of [HelloWorld samples](https://github.com/authorjapps/zerocode/blob/master/README.md#hello-world-) are available to clone and run.
 
-Let's learn about most simple and efficient way to test Kafka Streaming e.g. Read/Write during HBase/Hadoop BigData store or any other Data Pipe Lines or Micro-Services involving REST as well as Kafka. 
+> _Please make sure you bring up [Kafka in a Docker](https://github.com/authorjapps/zerocode-docker-factory/wiki/Docker-container-for-Kafka-and-Schema-Registry) prior to running the tests._
+
+Let's learn the most simple and efficient way of automated testing of Kafka applications. 
+This is particulaly useful during 
++ Micro-Services involving REST and Kafka
++ Read/Write during BigData store e.g. HBase/Hadoop
++ any other Data Pipe Lines
 
 <details>
   <summary>Try-at-home examples and much more(click to exapnd)</summary>
@@ -17,7 +23,6 @@ Let's learn about most simple and efficient way to test Kafka Streaming e.g. Rea
 
 <br/>
 
-<br/>
 
 For running the below test, please jump to the corresponding JUnit @Test.
 
@@ -29,7 +34,7 @@ public class KafkaProduceTest {
     @Test
     @JsonTestCase("kafka/produce/test_kafka_produce.json")
     public void testProduce() throws Exception {
-        // No node is needed here. What?
+        // No code needed here.
     }
 
 }
@@ -85,14 +90,15 @@ e.g.
 }
 
 ```
+
 Now you can see the-
 * Reports @ `target`
-* Logs @ `target/logs/zerocode_test_logs.log`
-* Test coverage CSV Report @ `target/zerocode_full_report_YYYY-MM-DDTHH-MM-SS.SSS.csv`
-* Test coverage Chart @ `target/zerocode_results_chart_YYYY-MM-DDTHH-MM-SS.SSS.html`
+* Logs @ `target/logs/test_logs.log`
+* Test coverage CSV Report @ `target/zerocode-junit-granular-report.csv`
+* Test coverage Chart @ `target/zerocode-junit-interactive-fuzzy-search.html`
 * More [reports](https://github.com/authorjapps/zerocode#generated-reports-and-charts)
 
-References:
+IDE References:
 ---
 Eclipse(General key-board shotcuts):
 =====
