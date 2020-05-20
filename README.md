@@ -5,7 +5,8 @@ This repo used open-source lib [zerocode-tdd](https://github.com/authorjapps/zer
 > _Please make sure you bring up [Kafka in a Docker](https://github.com/authorjapps/zerocode-docker-factory/wiki/Docker-container-for-Kafka-and-Schema-Registry) prior to running the tests._
 
 Let's learn the most simple and efficient way of automated testing of Kafka applications. 
-This is particulaly useful during 
+This is particulaly useful during:
+
 + Micro-Services involving REST and Kafka
 + Read/Write during BigData store e.g. HBase/Hadoop
 + any other Data Pipe Lines
@@ -22,7 +23,6 @@ This is particulaly useful during
 </details>
 
 <br/>
-
 
 For running the below test, please jump to the corresponding JUnit @Test.
 
@@ -42,15 +42,13 @@ public class KafkaProduceTest {
 
 In the above code 
 
-a) 'test_kafka_produce.json' is the Test Case which contains the JSON step(s). See a sample below.
-
-b) 'kafka_test_server.properties' contains the "Broker" details and Producer/Consumer configs
-
-c) '@RunWith(ZeroCodeUnitRunner.class)' is a JUnit custom runner to run the test
+- `test_kafka_produce.json` is the Test Case which contains the JSON step(s). See a sample below.
+- `kafka_test_server.properties` contains the "Broker" details and Producer/Consumer configs
+- `@RunWith(ZeroCodeUnitRunner.class)` is a JUnit custom runner to run the test
 
 
 e.g.
-```javascript
+```json
 {
     "scenarioName": "Simple Produce and Consume  a record to-from a kafka topic",
     "steps": [
@@ -98,20 +96,20 @@ Now you can see the-
 * Test coverage Chart @ `target/zerocode-junit-interactive-fuzzy-search.html`
 * More [reports](https://github.com/authorjapps/zerocode#generated-reports-and-charts)
 
-IDE References:
----
-Eclipse(General key-board shotcuts):
-=====
-For quick reference only- See more eclipse keys https://www.linkedin.com/pulse/top-30-eclipse-keyboard-shortcuts-java-programmer-jayveersinh-solanki/
-1. Open a matching java file -> Ctrl + Shift + R
-1. Open a matching JSON file -> Ctrl + Shift + R
-1. To navigate to file -> Ctrl + Click
-1. Clik a JSON file and navigate to it's JUnit Test -> Alt+Cmd+G(Mac: ⌥+⌘+G), Windows(Alt+Ctrl+G)
+## IDE References:
 
-IntelliJ(General key-board shotcuts):
-=====
-More keys: https://www.jetbrains.com/help/idea/mastering-intellij-idea-keyboard-shortcuts.html
-1. Open a matching java file -> Ctrl + n
-1. Open a matching JSON or XML file -> Ctrl + Shift + n
-1. To navigate to file -> Ctrl + Click
-1. Usage/invocation of a JSON file or Java File or Java method/variable etc -> Alt + F7
+### Eclipse(General key-board shotcuts):
+
+For quick reference only - See more [eclipse keys](https://www.linkedin.com/pulse/top-30-eclipse-keyboard-shortcuts-java-programmer-jayveersinh-solanki/)
+1. Open a matching java file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
+1. Open a matching JSON file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
+1. To navigate to file -> <kbd>Ctrl</kbd> + <kbd>Click</kbd>
+1. Clik a JSON file and navigate to it's JUnit Test -> <kbd>Alt</kbd>+<kbd>Cmd</kbd>+<kbd>G</kbd>(Mac: <kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>G</kbd>), Windows(<kbd>Alt</kbd>+<kbd>Ctrl</kbd>+<kbd>G</kbd>)
+
+### IntelliJ(General key-board shotcuts):
+
+More keys - See more [IntelliJ keys](https://www.jetbrains.com/help/idea/mastering-intellij-idea-keyboard-shortcuts.html)
+1. Open a matching java file -> <kbd>Ctrl</kbd> + <kbd>n</kbd>
+1. Open a matching JSON or XML file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>n</kbd>
+1. To navigate to file -> <kbd>Ctrl</kbd> + <kbd>Click</kbd>
+1. Usage/invocation of a JSON file or Java File or Java method/variable etc -> <kbd>Alt</kbd> + <kbd>F7</kbd>
