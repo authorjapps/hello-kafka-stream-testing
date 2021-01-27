@@ -1,25 +1,25 @@
 {
     "scenarioName": "Unload - consume a message from kafka",
     "steps": [
-        {
-            "name": "produce_step",
-            "url": "kafka-topic:demo-c1",
-            "operation": "produce",
-            "request": {
-                "records":[
-                    {
-                        "key": "${RANDOM.NUMBER}",
-                        "value": "Hello World"
-                    }
-                ]
-            },
-            "assertions": {
-                "status" : "Ok"
-            }
-        },
+//        {
+//            "name": "produce_step",
+//            "url": "kafka-topic:demo-c1",
+//            "operation": "produce",
+//            "request": {
+//                "records":[
+//                    {
+//                        "key": "${RANDOM.NUMBER}",
+//                        "value": "Hello World"
+//                    }
+//                ]
+//            },
+//            "assertions": {
+//                "status" : "Ok"
+//            }
+//        },
         {
             "name": "consume_step",
-            "url": "kafka-topic:demo-c1",
+            "url": "kafka-topic:topic1",
             "operation": "consume",
             "request": {
             },

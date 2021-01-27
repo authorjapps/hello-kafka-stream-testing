@@ -1,43 +1,66 @@
 {
     "scenarioName": "Produce a JSON via REST Proxy and consume a AVRO msg message as JSON",
     "steps": [
-        {
-            "name": "produce_avro_raw",
-            "url": "/topics/demo-avro-1",
-            "operation": "POST",
-            "request": {
-                "headers": {
-                    "Content-Type": "application/vnd.kafka.avro.v1+json",
-                    "Accept": "application/vnd.kafka.v1+json, application/vnd.kafka+json, application/json"
-                },
-                "body": {
-                    "value_schema": "{\"type\":\"record\",\"name\":\"myrecord\",\"fields\":[{\"name\":\"f1\",\"type\":\"string\"}]}",
-                    "records": [
-                        {
-                            "value": {
-                                "f1": "val1"
-                            }
-                        },
-                        {
-                            "value": {
-                                "f1": "val2",
-                                "partition": 0
-                            }
-                        }
-                    ]
-                }
-            },
-            "assertions": {
-                "status": 200,
-                "body" : {
-                    "offsets.SIZE" : 2,
-                    "value_schema_id" : "$NOT.NULL"
-                }
-            }
-        },
+//        {
+//            "name": "produce_step",
+//            "url": "kafka-topic:topic1",
+//            "operation": "produce",
+//            "request": {
+//                "schema": {
+//                    "a": "b"
+//                },
+//                "recordType": "JSON",
+//                "records": [
+//                    {
+//                        //"key": "KEY-001",
+//                        "value": {
+//                            "f1": "val1"
+//                        }
+//                    }
+//                ]
+//            },
+//            "assertions": {
+//                "status": "Ok"
+//            }
+//        },
+
+        //        {
+        //            "name": "produce_avro_raw",
+        //            "url": "/topics/demo-avro-1",
+        //            "operation": "POST",
+        //            "request": {
+        //                "headers": {
+        //                    "Content-Type": "application/vnd.kafka.avro.v1+json",
+        //                    "Accept": "application/vnd.kafka.v1+json, application/vnd.kafka+json, application/json"
+        //                },
+        //                "body": {
+        //                    "value_schema": "{\"type\":\"record\",\"name\":\"myrecord\",\"fields\":[{\"name\":\"f1\",\"type\":\"string\"}]}",
+        //                    "records": [
+        //                        {
+        //                            "value": {
+        //                                "f1": "val1"
+        //                            }
+        //                        },
+        //                        {
+        //                            "value": {
+        //                                "f1": "val2",
+        //                                "partition": 0
+        //                            }
+        //                        }
+        //                    ]
+        //                }
+        //            },
+        //            "assertions": {
+        //                "status": 200,
+        //                "body" : {
+        //                    "offsets.SIZE" : 2,
+        //                    "value_schema_id" : "$NOT.NULL"
+        //                }
+        //            }
+        //        },
         {
             "name": "consume_avro_msg_as_raw",
-            "url": "kafka-topic:demo-avro-1",
+            "url": "kafka-topic:topic1",
             "operation": "consume",
             "request": {
                 "consumerLocalConfigs": {
@@ -48,19 +71,7 @@
                 }
             },
             "assertions": {
-                "size": 2,
-                "records": [
-                    {
-                        "value": {
-                            "f1": "val1"
-                        }
-                    },
-                    {
-                        "value": {
-                            "f1": "val2"
-                        }
-                    }
-                ]
+                "size": 1
             }
         }
     ]
