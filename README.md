@@ -32,7 +32,7 @@ For running the below test, please jump to the corresponding JUnit @Test.
 public class KafkaProduceTest {
 
     @Test
-    @JsonTestCase("kafka/produce/test_kafka_produce.json")
+    @Scenario("kafka/produce/test_kafka_produce.json")
     public void testProduce() throws Exception {
         // No code needed here.
     }
@@ -98,18 +98,16 @@ Now you can see the-
 
 ## IDE References:
 
-### Eclipse(General key-board shotcuts):
-
-For quick reference only - See more [eclipse keys](https://www.linkedin.com/pulse/top-30-eclipse-keyboard-shortcuts-java-programmer-jayveersinh-solanki/)
-1. Open a matching java file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
-1. Open a matching JSON file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
-1. To navigate to file -> <kbd>Ctrl</kbd> + <kbd>Click</kbd>
-1. Clik a JSON file and navigate to it's JUnit Test -> <kbd>Alt</kbd>+<kbd>Cmd</kbd>+<kbd>G</kbd>(Mac: <kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>G</kbd>), Windows(<kbd>Alt</kbd>+<kbd>Ctrl</kbd>+<kbd>G</kbd>)
-
 ### IntelliJ(General key-board shotcuts):
-
 More keys - See more [IntelliJ keys](https://www.jetbrains.com/help/idea/mastering-intellij-idea-keyboard-shortcuts.html)
 1. Open a matching java file -> <kbd>Ctrl</kbd> + <kbd>n</kbd>
 1. Open a matching JSON or XML file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>n</kbd>
 1. To navigate to file -> <kbd>Ctrl</kbd> + <kbd>Click</kbd>
 1. Usage/invocation of a JSON file or Java File or Java method/variable etc -> <kbd>Alt</kbd> + <kbd>F7</kbd>
+
+### Eclipse(General key-board shotcuts):
+For quick reference only - See more [eclipse keys](https://www.linkedin.com/pulse/top-30-eclipse-keyboard-shortcuts-java-programmer-jayveersinh-solanki/)
+1. Open a matching java file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
+1. Open a matching JSON file -> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>
+1. To navigate to file -> <kbd>Ctrl</kbd> + <kbd>Click</kbd>
+1. Clik a JSON file and navigate to it's JUnit Test -> <kbd>Alt</kbd>+<kbd>Cmd</kbd>+<kbd>G</kbd>(Mac: <kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>G</kbd>), Windows(<kbd>Alt</kbd>+<kbd>Ctrl</kbd>+<kbd>G</kbd>)
