@@ -1,6 +1,9 @@
 # Kafka Testing Hello World examples
 
-This repo used open-source lib [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing. Many flavours of [HelloWorld samples](https://github.com/authorjapps/zerocode/blob/master/README.md#hello-world-) are available to clone and run.
+This repo used open-source lib [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing. 
+
+👉 Many flavours of [RealWorld Testing Samples](https://github.com/authorjapps/zerocode/tree/master/kafka-testing-examples) of Kafka, Daatabases & API etc are available here.
+
 
 > _Please make sure you bring up [Kafka in a Docker](https://github.com/authorjapps/zerocode-docker-factory/wiki/Docker-container-for-Kafka-and-Schema-Registry) prior to running the tests._
 
