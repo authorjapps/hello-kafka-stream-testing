@@ -1,6 +1,6 @@
 # Kafka Testing Hello World examples
 
-This repo used open-source lib [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing. 
+This repo uses open-source lib [zerocode-tdd](https://github.com/authorjapps/zerocode) for declarative style testing. 
 
 👉 Many flavours of [RealWorld Testing Samples](https://github.com/authorjapps/zerocode/tree/master/kafka-testing-examples) of Kafka, Daatabases & API etc are available here.
 
