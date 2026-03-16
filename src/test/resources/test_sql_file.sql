@@ -1,0 +1,1 @@
+SELECT * FROM emp ORDER BY id DESC;
